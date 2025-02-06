@@ -63,8 +63,8 @@ const SignupForm = ({}) => {
             <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
               New User?
             </Typography>
-            <Link href={"#"} className="text-[blue] font-semibold">
-              Create a User
+            <Link href={"#"} className="text-sky-600 font-semibold">
+              Create an account
             </Link>
           </span>
           <div className="w-full flex flex-col gap-5">
@@ -108,7 +108,7 @@ const SignupForm = ({}) => {
         open={showSnackbar}
         autoHideDuration={6000}
         onClose={() => setShowSnackbar(false)}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
         <Alert
           onClose={() => setShowSnackbar(false)}

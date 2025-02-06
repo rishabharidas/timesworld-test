@@ -21,6 +21,7 @@ const SignupPage = () => {
           <Image
             src="/signin/signin_right.png"
             alt="Login Side Image"
+            priority
             width={400}
             height={90}
           />

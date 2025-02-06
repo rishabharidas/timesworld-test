@@ -19,3 +19,29 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.slick-dots {
+  bottom: 5% !important;
+}
+
+.slick-next {
+  right: 1% !important;
+  z-index: 10;
+}
+.slick-prev {
+  left: 1% !important;
+  z-index: 10;
+}
+.slick-track,
+.slick-list {
+  height: 100% !important;
+}
+.slick-slide {
+  height: 100% !important;
+  * {
+    height: 100% !important;
+  }
+}
+.slider-image {
+  height: 100% !important;
+}
