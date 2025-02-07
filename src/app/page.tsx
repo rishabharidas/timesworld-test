@@ -1,8 +1,17 @@
 // import Image from "next/image";
 import TimeHome from "@/components/TimeHome/TimeHome";
 import Socials from "@/components/Socials/Socials";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
+  const cookieStore = await cookies();
+  const cookie = cookieStore.get("keeplogin"); // Replace with your cookie name
+
+  if (!cookie) {
+    redirect("/login");
+  }
+
   return (
     <div className="">
       <main className="w-100 flex justify-center min-h-[80vh]">
