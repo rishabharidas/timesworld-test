@@ -6,9 +6,9 @@ import { redirect } from "next/navigation";
 
 export default async function Home() {
   const cookieStore = await cookies();
-  const cookie = cookieStore.get("keeplogin"); // Replace with your cookie name
+  const cookie = cookieStore.get("keeplogin");
 
-  if (!cookie) {
+  if (!cookie?.value || cookie?.value == "false") {
     redirect("/login");
   }
 
