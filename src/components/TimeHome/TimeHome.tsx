@@ -3,8 +3,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import Slider from "react-slick";
 import HomeHeader from "./components/HomeHeader/HomeHeader";
@@ -13,7 +12,6 @@ import { StoreProvider } from "@/redux/StoreProvider";
 import Image from "next/image";
 
 const TimeHome = () => {
-  const router = useRouter();
   const [country, setCountry] = useState("All");
 
   const sliderSettings = {
@@ -25,30 +23,6 @@ const TimeHome = () => {
     infinite: true,
     arrow: true,
     className: "h-full",
-  };
-
-  useEffect(() => {
-    if (typeof window != undefined) {
-      const staylogin = getCookie("keeplogin");
-      if (!staylogin) {
-        router.push("/login");
-      }
-    }
-  }, []);
-
-  const getCookie = (name: string) => {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(";");
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) === " ") {
-        c = c.substring(1, c.length);
-      }
-      if (c.indexOf(nameEQ) === 0) {
-        return c.substring(nameEQ.length, c.length);
-      }
-    }
-    return null;
   };
 
   const getCountyDetails = (countryType: string) => {
