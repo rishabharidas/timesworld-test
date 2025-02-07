@@ -1,14 +1,19 @@
 // import Image from "next/image";
 import TimeHome from "@/components/TimeHome/TimeHome";
 import Socials from "@/components/Socials/Socials";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
   const cookieStore = await cookies();
   const cookie = cookieStore.get("keeplogin");
+  const headersList = await headers();
+  const referer = headersList.get("referer");
+  const isComingFromLogin = referer?.includes("/login");
 
-  if (!cookie?.value || cookie?.value == "false") {
+  if (!cookie) {
+    redirect("/login");
+  } else if (cookie?.value === "false" && !isComingFromLogin) {
     redirect("/login");
   }
 
