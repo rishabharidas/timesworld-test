@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import SignupForm from "@/components/SignupForm/SignupForm";
-import Socials from "@/components/SignupForm/Socials/Socials";
+import Socials from "@/components/Socials/Socials";
 
 const SignupPage = () => {
   return (

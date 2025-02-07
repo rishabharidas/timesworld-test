@@ -1,6 +1,6 @@
 // import Image from "next/image";
 import TimeHome from "@/components/TimeHome/TimeHome";
-import Socials from "@/components/SignupForm/Socials/Socials";
+import Socials from "@/components/Socials/Socials";
 
 export default async function Home() {
   return (

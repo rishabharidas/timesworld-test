@@ -55,7 +55,7 @@ const SignupForm = ({}) => {
         className="border-b pb-12 w-full lg:w-1/2 max-w-[300px] lg:max-w-lg"
         onSubmit={(e) => validateAndPass(e)}
       >
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 items-center md:items-start">
           <Typography variant="h3" sx={{ fontWeight: 600 }}>
             Sign In
           </Typography>
